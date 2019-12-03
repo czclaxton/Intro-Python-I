@@ -22,3 +22,23 @@ and does the following:
 import sys
 import calendar
 from datetime import datetime
+
+# print(sys.argv)
+
+now = datetime.now()
+if len(sys.argv) > 3:
+    print("Too many inputs")
+    quit()
+
+if len(sys.argv) > 2:
+    year = int(sys.argv[2])
+    month = int(sys.argv[1])
+elif len(sys.argv) > 1:
+    year = now.year
+    month = int(sys.argv[1])
+else:
+    year = now.year
+    month = now.month
+
+
+print(calendar.month(year, month))
